@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empowered CV · Client Services & Operations Leader</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1a1a2e;
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .cv-card {
+      max-width: 1100px;
+      width: 100%;
+      background: #fcf9f7;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px -10px rgba(0,0,0,0.5);
+      display: grid;
+      grid-template-columns: 30% 70%;
+      overflow: hidden;
+      transition: all 0.2s;
+      border: 1px solid rgba(212, 175, 125, 0.2);
+    }
+
+    /* ---------- LEFT PANEL ---------- */
+    .left-panel {
+      background: #2c1e2b;
+      color: #f2e6e6;
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .profile-header {
+      text-align: left;
+    }
+
+    .avatar-icon {
+      font-size: 3.8rem;
+      color: #d4af7d;
+      background: #3f2a3a;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 1.2rem;
+      border: 3px solid #d4af7d;
+      box-shadow: 0 0 0 4px #3f2a3a;
+    }
+
+    .profile-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 2.3rem;
+      letter-spacing: -0.5px;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-header .title {
+      font-weight: 400;
+      color: #d4af7d;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #d4af7d55;
+      padding-bottom: 0.6rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      color: #ddd0d0;
+    }
+
+    .contact-item i {
+      width: 20px;
+      color: #d4af7d;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #d4af7d;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #d4af7d55;
+      padding-bottom: 0.5rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .skill-item .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #e6d9d9;
+      margin-bottom: 4px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 7px;
+      background: #3f2a3a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #d4af7d, #e8c9a3);
+      width: 0%;
+    }
+
+    .cert-list, .tools-list {
+      list-style: none;
+      margin-top: 0.2rem;
+    }
+
+    .cert-list li, .tools-list li {
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #e6d9d9;
+    }
+
+    .cert-list i, .tools-list i {
+      color: #d4af7d;
+      width: 18px;
+      font-size: 0.9rem;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.3rem;
+    }
+
+    .tools-list li {
+      background: #3f2a3a;
+      padding: 0.2rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #f2e6e6;
+      border: 1px solid #d4af7d55;
+      margin-bottom: 0;
+    }
+
+    .tools-list i {
+      margin-right: 4px;
+    }
+
+    .empower-badge {
+      background: #f8f1eb;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: #2c1e2b;
+      border: 1px solid #d4af7d55;
+      margin-top: 0.6rem;
+    }
+    .empower-badge i {
+      color: #d4af7d;
+    }
+
+    /* ---------- RIGHT PANEL ---------- */
+    .right-panel {
+      background: #ffffff;
+      padding: 2.2rem 2.5rem;
+    }
+
+    .summary {
+      background: #f8f1eb;
+      padding: 1.2rem 1.8rem;
+      border-radius: 16px;
+      border-left: 6px solid #d4af7d;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .summary p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #2c1e2b;
+      font-weight: 400;
+    }
+
+    .summary i {
+      color: #d4af7d;
+      margin-right: 0.5rem;
+    }
+
+    .summary .empower-tag {
+      display: inline-block;
+      background: #2c1e2b;
+      color: #d4af7d;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    .exp-item {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid #f0e8e2;
+      padding-bottom: 1.5rem;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .exp-icon {
+      background: #d4af7d;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c1e2b;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .exp-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #2c1e2b;
+    }
+
+    .exp-content .company {
+      font-weight: 600;
+      color: #d4af7d;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-content .date {
+      font-size: 0.8rem;
+      color: #7a6a6a;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 300;
+    }
+
+    .exp-content ul {
+      list-style: none;
+      margin-top: 0.3rem;
+    }
+
+    .exp-content ul li {
+      font-size: 0.92rem;
+      color: #2c1e2b;
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+
+    .exp-content ul li i {
+      color: #d4af7d;
+      font-size: 0.5rem;
+      width: 14px;
+      margin-top: 6px;
+    }
+
+    .edu-achievement {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed #e8ddd5;
+    }
+
+    .edu-block h4, .achieve-block h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #2c1e2b;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .edu-block h4 i, .achieve-block h4 i {
+      color: #d4af7d;
+    }
+
+    .edu-block p {
+      font-size: 0.9rem;
+      color: #2c1e2b;
+      line-height: 1.5;
+    }
+
+    .achieve-block .big-number {
+      background: #2c1e2b;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.3rem;
+      border: 2px solid #d4af7d;
+      line-height: 1;
+    }
+
+    .achieve-block .big-number small {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-left: 4px;
+    }
+
+    .achieve-block .achieve-desc {
+      font-size: 0.9rem;
+      color: #2c1e2b;
+    }
+
+    /* responsiveness */
+    @media (max-width: 780px) {
+      .cv-card {
+        grid-template-columns: 1fr;
+      }
+      .left-panel {
+        padding: 1.8rem;
+      }
+      .right-panel {
+        padding: 1.8rem;
+      }
+      .edu-achievement {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .exp-item {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .profile-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-card">
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="profile-header">
+        <div class="avatar-icon">
+          <i class="fas fa-female"></i>
+        </div>
+        <h1>Sarah <br>Mitchell</h1>
+        <div class="title">Client Services & Operations Leader</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> sarah.m@career.io</div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> +1 (800) 555‑0199</div>
+        <div class="contact-item"><i class="fab fa-linkedin-in"></i> linkedin.com/in/sarahm</div>
+        <div class="contact-item"><i class="fas fa-map-pin"></i> Los Angeles, CA</div>
+      </div>
+
+      <!-- Core competencies -->
+      <div>
+        <div class="section-title"><i class="fas fa-chart-line" style="margin-right: 8px;"></i> Core Competencies</div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Client Relations</span> <span>95%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Team Leadership</span> <span>90%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Collections & Recovery</span> <span>88%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Dispatch & Logistics</span> <span>85%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <div class="section-title"><i class="fas fa-certificate" style="margin-right: 8px;"></i> Certifications</div>
+        <ul class="cert-list">
+          <li><i class="fas fa-check-circle"></i> Customer Service Excellence</li>
+          <li><i class="fas fa-check-circle"></i> Leadership & Team Management</li>
+          <li><i class="fas fa-check-circle"></i> Negotiation & Conflict Resolution</li>
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div>
+        <div class="section-title"><i class="fas fa-tools" style="margin-right: 8px;"></i> Tools</div>
+        <ul class="tools-list">
+          <li><i class="fas fa-phone"></i> Zendesk</li>
+          <li><i class="fas fa-tasks"></i> Salesforce</li>
+          <li><i class="fas fa-truck"></i> DispatchTrack</li>
+          <li><i class="fas fa-file-alt"></i> Microsoft 365</li>
+          <li><i class="fas fa-chart-pie"></i> Tableau</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 0.5rem;">
+        <span class="empower-badge"><i class="fas fa-star"></i> #WomenInOperations</span>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <!-- Summary -->
+      <div class="summary">
+        <p><i class="fas fa-quote-left"></i> Results-driven operations leader with <strong>10+ years</strong> of experience across customer service, collections, client services, and dispatch. Passionate about building high-performing teams, streamlining processes, and delivering exceptional client experiences.</p>
+        <div class="empower-tag"><i class="fas fa-female" style="margin-right: 4px;"></i> mentor · process improvement</div>
+      </div>
+
+      <!-- Experience -->
+      <div>
+        <div class="section-title" style="color: #2c1e2b; border-bottom-color: #d4af7d; margin-bottom: 1.2rem;"><i class="fas fa-briefcase" style="margin-right: 8px; color:#d4af7d;"></i> Experience</div>
+
+        <!-- Dispatch Representative (2024 – present) -->
+        <div class="exp-item">
+          <div class="exp-icon"><i class="fas fa-truck"></i></div>
+          <div class="exp-content">
+            <h3>Dispatch Representative</h3>
+            <div class="company">Automotive Group · Vernon, CA (Remote)</div>
+            <span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> 2024 – Present</span>
+            <ul>
+              <li><i class="fas fa-circle"></i> <strong>Title & Paperwork Review:</strong> Verify and process all dispatch documentation for accuracy and compliance.</li>
+              <li><i class="fas fa-circle"></i> <strong>Client Pickup/Drop-off Scheduling:</strong> Coordinate and optimize daily schedules for 50+ field technicians across 4 states.</li>
+              <li><i class="fas fa-circle"></i> <strong>Documentation & Compliance:</strong> Ensure all records meet regulatory standards and company policies.</li>
+              <li><i class="fas fa-circle"></i> Reduced average response time by <strong>28%</strong> through optimized routing and real-time tracking.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Senior Client Services Representative (2022–2024) -->
+        <div class="exp-item">
+          <div class="exp-icon"><i class="fas fa-headset"></i></div>
+          <div class="exp-content">
+            <h3>Senior Client Services Representative</h3>
+            <div class="company">Mirion Technologies · Los Angeles, CA (Remote)</div>
+            <span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> 2022 – 2024</span>
+            <ul>
+              <li><i class="fas fa-circle"></i> <strong>Client Account Management:</strong> Conduct regular meetings with clients to present RAILs and provide account updates. Proactively manage accounts by sending Health Check Reports and identifying non-communicating devices.</li>
+              <li><i class="fas fa-circle"></i> <strong>Issue Resolution & Support:</strong> Investigate and resolve billing discrepancies, crediting concerns, and complex client inquiries with professionalism and speed.</li>
+              <li><i class="fas fa-circle"></i> <strong>Cross-Functional Collaboration:</strong> Partner with sales, collections, and enterprise teams to resolve issues and improve client experience.</li>
+              <li><i class="fas fa-circle"></i> <strong>Documentation & Compliance:</strong> Oversee Commercial Invoices, Air Waybills, and customs documentation for international shipments, ensuring full regulatory compliance.</li>
+              <li><i class="fas fa-circle"></i> Achieved <strong>98% client retention</strong> through proactive communication and timely resolution.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Collections Team Lead (2017–2021) -->
+        <div class="exp-item">
+          <div class="exp-icon"><i class="fas fa-hand-holding-usd"></i></div>
+          <div class="exp-content">
+            <h3>Collections Team Lead</h3>
+            <div class="company">Hyundai Capital America · Remote</div>
+            <span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> 2017 – 2021</span>
+            <ul>
+              <li><i class="fas fa-circle"></i> <strong>Team Performance & SLAs:</strong> Ensure team meets or exceeds service levels through weekly coaching sessions and continuous improvement initiatives.</li>
+              <li><i class="fas fa-circle"></i> <strong>Mentorship & Escalation:</strong> Provide direction and sound advice to team members; respond timely to escalations and mentor direct reports.</li>
+              <li><i class="fas fa-circle"></i> <strong>Accountability & Reporting:</strong> Monitor team performance, plan and assign work, and escalate pending issues (e.g., employment, process breakdown) to Account Manager.</li>
+              <li><i class="fas fa-circle"></i> Led team of 12 collectors, exceeding quarterly targets by <strong>32%</strong> and reducing delinquency rates by 25%.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Digital & Web Support (2015) -->
+        <div class="exp-item">
+          <div class="exp-icon"><i class="fas fa-laptop"></i></div>
+          <div class="exp-content">
+            <h3>Digital & Web Support</h3>
+            <div class="company">Tribune Publishing (TRONC) · Remote</div>
+            <span class="date"><i class="far fa-calendar-alt" style="margin-right: 4px;"></i> 2015</span>
+            <ul>
+              <li><i class="fas fa-circle"></i> <strong>Customer Guidance:</strong> Guide customers on subscription access issues and provide navigation tutorials for digital platforms.</li>
+              <li><i class="fas fa-circle"></i> <strong>Troubleshooting:</strong> Deliver basic troubleshooting steps to resolve login, payment, and account-related issues.</li>
+              <li><i class="fas fa-circle"></i> Maintained <strong>96% customer satisfaction</strong> score for 6 consecutive months.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education + Achievement -->
+      <div class="edu-achievement">
+        <div class="edu-block">
+          <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+          <p><strong>B.A. in Business Administration</strong><br>University of California, Los Angeles · 2015</p>
+          <p style="margin-top: 0.3rem;"><strong>Certified Operations Professional</strong><br>APICS · 2020</p>
+        </div>
+        <div class="achieve-block">
+          <h4><i class="fas fa-trophy"></i> Key Achievement</h4>
+          <div class="big-number">$4.2M <small>recovered</small></div>
+          <div class="achieve-desc">Led collections team to recover <strong>$4.2M</strong> in outstanding revenue over 4 years while maintaining positive client relationships and exceeding SLAs.</div>
+        </div>
+      </div>
+
+      <!-- Metric highlight -->
+      <div style="margin-top: 1.5rem; background: #f8f1eb; border-radius: 40px; padding: 0.8rem 1.8rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 0.9rem; border: 1px solid #e8ddd5;">
+        <span><i class="fas fa-arrow-up" style="color:#d4af7d;"></i> <strong>↑32%</strong> team target exceeded</span>
+        <span><i class="fas fa-users" style="color:#d4af7d;"></i> <strong>12</strong> direct reports</span>
+        <span><i class="fas fa-clock" style="color:#d4af7d;"></i> <strong>28%</strong> faster dispatch</span>
+        <span><i class="fas fa-smile" style="color:#d4af7d;"></i> <strong>98%</strong> client retention</span>
+      </div>
+
+      <div style="margin-top: 0.8rem; text-align: right; font-size: 0.75rem; color: #7a6a6a; letter-spacing: 0.5px;">
+        <i class="fas fa-heart" style="color: #d4af7d;"></i> built with purpose · lead with empathy
+      </div>
+    </div>
+  </div>
+</body>
+</html>
